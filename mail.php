@@ -1,13 +1,13 @@
 <?php
     if(isset($_POST['submit'])){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $message = $_POST['message'];
-        $to = 'wsizemore00@gmail.com';
-        $subject = 'Hello from Bluegrass Doodles';
-        $human = $_POST['human'];
-        $from = 'From: Bluegrass Doodles';
-        $body = "From: $name\n E-Mail: $email\n Message:\n $message";
+        $name=$_POST['name'];
+        $email=$_POST['email'];
+        $message=$_POST['message'];
+        $to='wsizemore00@gmail.com';
+        $subject='Hello from Bluegrass Doodles';
+        $human=$_POST['human'];
+        $from='From: Bluegrass Doodles';
+        $body="From: $name\n E-Mail: $email\n Message:\n $message";
     }
  				
     if ($_POST['submit'] && $human == '4') {				 
