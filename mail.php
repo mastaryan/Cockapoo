@@ -1,5 +1,5 @@
 <?php
-    if(isset($_POST['submit'])){
+    if($_POST['submit'])){
         $name=$_POST['name'];
         $email=$_POST['email'];
         $message=$_POST['message'];
@@ -19,4 +19,5 @@
     } else if ($_POST['submit'] && $human != '4') {
 	echo '<p>You answered the anti-spam question incorrectly!</p>';
     }
+    error_reporting(-1);
 ?>
