@@ -19,16 +19,16 @@ if(isset($_POST['submit'])){
     }
 
     // ANTI SPAM	
-    if ($_POST['submit'] && $human == '4') {				 
-        if (mail ($to, $subject, $body, $from)) { 
-	    echo '<p>Your message has been sent!</p>';
-	} else { 
-	    echo '<p>Something went wrong, go back and try again!</p>'; 
-	} 
-    } else if ($_POST['submit'] && $human != '4') {
-	echo '<p>You answered the anti-spam question incorrectly!</p>';
-    }
-    error_reporting(-1);
+    // if ($_POST['submit'] && $human == '4') {				 
+    //     if (mail ($to, $subject, $body, $from)) { 
+	//     echo '<p>Your message has been sent!</p>';
+	// } else { 
+	//     echo '<p>Something went wrong, go back and try again!</p>'; 
+	// } 
+    // } else if ($_POST['submit'] && $human != '4') {
+	// echo '<p>You answered the anti-spam question incorrectly!</p>';
+    // }
+    // error_reporting(-1);
     // END ANTI SPAM
 
 ?>
