@@ -1,5 +1,7 @@
+
 <?php
-    if($_POST['submit'])){
+    if(isset($_POST['submit'])){
+        ini_set('display_errors', 1); error_reporting(~0);
         $name=$_POST['name'];
         $email=$_POST['email'];
         $message=$_POST['message'];
