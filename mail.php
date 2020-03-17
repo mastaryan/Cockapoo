@@ -28,7 +28,10 @@ if(isset($_POST['submit'])){
     // } else if ($_POST['submit'] && $human != '4') {
 	// echo '<p>You answered the anti-spam question incorrectly!</p>';
     // }
-    // error_reporting(-1);
     // END ANTI SPAM
+
+    ini_set('display_startup_errors', 1);
+    ini_set('display_errors', 1);
+    error_reporting(-1);
 
 ?>
