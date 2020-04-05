@@ -1509,6 +1509,30 @@ input, select, textarea {
 			letter-spacing: 0.075em;
 			line-height: 1.5em;
 		}
+	
+	header.style2 {
+		text-align: center;
+		padding: 3em 0 3em 0;
+		}
+
+		header.style2 h2 {
+			font-weight: 700;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+			padding: 0 0 .5em 0;
+			color:#b1b4b9;
+		}
+
+		header.style2 p {
+			color: #b1b4b9;
+			display: block;
+			text-align: center;
+			margin: 1.15em 0 0 0;
+			letter-spacing: 0.075em;
+			line-height: 1.5em;
+		}
+
+		
 
 /* Table */
 
