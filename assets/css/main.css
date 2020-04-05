@@ -193,6 +193,13 @@ input, select, textarea {
 		max-width: 100%;
 		font-size: 24px;
 	}
+
+	.description {
+		text-align: center;
+		max-width: 100%;
+		font-size: 24px;
+		font-weight: bold;
+	}
 	
 	.video {
 		display: block;
@@ -1484,7 +1491,7 @@ input, select, textarea {
 	header.style1 {
 		text-align: center;
 		padding: 3em 0 3em 0;
-	}
+		}
 
 		header.style1 h2 {
 			font-weight: 700;
