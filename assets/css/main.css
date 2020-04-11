@@ -1508,6 +1508,7 @@ input, select, textarea {
 			font-size: 1.3em;
 			letter-spacing: 0.075em;
 			line-height: 1.5em;
+			font-weight:bold;
 		}
 	
 	header.style2 {
