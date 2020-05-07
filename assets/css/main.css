@@ -2334,6 +2334,14 @@ input, select, textarea {
 			letter-spacing: 0.05em;
 		}
 
+/* Doodle List */
+.doodlelist {
+	text-align: center;
+}
+.doodlelist > ul {
+	display: inline-block;
+}
+
 /* Main */
 
 /* Footer */
