@@ -2103,6 +2103,11 @@ input, select, textarea {
 			.wrapper.style3 .image {
 				border: solid 10px #fff;
 			}
+			.wrapper.style3 h2 {
+				color:rgb(80, 80, 173);
+				padding-top: 1em;
+				text-align: center;
+			}
 
 /* Page Wrapper */
 
