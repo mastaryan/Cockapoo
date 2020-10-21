@@ -131,26 +131,24 @@
 
 								<!-- Contact Form -->
 									<section>
-										<form id="contact-form" method="post" action="contact.php" role="form">			
+										<form id="contact-form" method="post" action="contact.php" role="form" >			
 
 											<div class="row gtr-50">
-												
 												<div class="col-6 col-12-small">
-													Name: <input type="text" name="name"><br>												
+													Name: <input type="text" name="name" required="required"><br>												
 												</div>
 
 												<div class="col-6 col-12-small">
-													Email: <input type="text" name="email"><br>												
+													Email: <input type="text" name="email" required="required"><br>												
 												</div>
 
 												<div class="col-12">
-													Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>												
+													Message:<br><textarea rows="5" name="message" required="required" cols="30"></textarea><br>												
 												</div>
 
-												<div class="col-12">
+												<div class="col-12-small">
 													<div class="g-recaptcha" data-sitekey="6LeTAdoZAAAAABIoqzMv6g7oQ8M7UmBJhDCyDRAT" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
 													<input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">	
-													</div>
 												<br>
 												</br>
 													<ul class="actions">
@@ -158,15 +156,13 @@
 														<li><input type="reset" class="style2" value="Clear" /></li>
 													</ul>
 												</div>
-
 											</div>
 										</form>
 									</section>
-									</div>
-
+								</div>
+								
 							<!-- Contact -->
 							<div class="col-6 col-12-medium">
-
 								
 									<section class="feature-list small">
 										<div class="row">
