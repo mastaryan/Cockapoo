@@ -14,8 +14,17 @@
 	<!-- Google AdSense Start -->
 	<script data-ad-client="ca-pub-9745680505770656" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- Google AdSense End -->
+
   <meta name="google-site-verification" content="YC_GwpQ4WkkPVW0msr2-Mlixp-3NLuUkI08jDiBllYI" />  
-  
+
+  <!-- Google reCAPTCHA Start -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Google reCAPTCHA End -->
+
+  <link href='custom.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
   <title>Bluegrass Doodle | Cockapoo, Goldendoodle & Labradoodle Puppies for sale in London, Kentucky</title>
   <meta name="keywords" content="Cockapoo in London, KY, Cockapoo Dogs and Puppies for sale, Cockapoo Pups, Cockapoo, Cockapoo Puppies For Sale, Cockerspaniel, Poodle, AKC, Cockapoo Dogs London Kentucky, Bluegrass, Kentucky">
   <meta name="description" content="Find Cockapoo, Goldendoodle and Labradoodle puppies for sale. AKC Dogs and Puppies for sale in London, Kentucky.  Buy perfect Pups from reputable Breeder’s.">
@@ -122,25 +131,33 @@
 
 								<!-- Contact Form -->
 									<section>
-										<form method="post" action="mail.php">
+										<form id="contact-form" method="post" action="contact.php" role="form">			
+
 											<div class="row gtr-50">
+												
 												<div class="col-6 col-12-small">
-													Name: <input type="text" name="name"><br>												</div>
-												<!-- <div class="col-6 col-12-small">
-													Last Name: <input type="text" name="name"><br>												</div> -->
+													Name: <input type="text" name="name"><br>												
+												</div>
+
 												<div class="col-6 col-12-small">
-													Email: <input type="text" name="email"><br>												</div>
+													Email: <input type="text" name="email"><br>												
+												</div>
+
 												<div class="col-12">
-													Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>												</div>
+													Message:<br><textarea rows="5" name="message" cols="30"></textarea><br>												
+												</div>
+
 												<div class="col-12">
-													<label>*What is 2+2? (Make sure you're human!)</label>
-														<input name="human" placeholder="Type Here"><br>
+													<div class="g-recaptcha" data-sitekey="6LeTAdoZAAAAABIoqzMv6g7oQ8M7UmBJhDCyDRAT">
+													</div>
+												<br>
 												</br>
 													<ul class="actions">
 														<li><input type="submit" class="style1" value="Send" /></li>
 														<li><input type="reset" class="style2" value="Clear" /></li>
 													</ul>
 												</div>
+
 											</div>
 										</form>
 									</section>
@@ -210,6 +227,12 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script data-ad-client="ca-pub-9745680505770656" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+       		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>        
+        	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+        	<script src="contact.js"></script>
 
 	</body>
 </html>
