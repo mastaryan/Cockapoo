@@ -1229,7 +1229,7 @@ input, select, textarea {
 			}
 			
 			.div .logo {
-				background-color: hotpink;
+				font-family:'Playlist Script';
 			}
 			.row {
 				display: flex;
