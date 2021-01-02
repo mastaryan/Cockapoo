@@ -2166,7 +2166,7 @@ input, select, textarea {
 			color: #fff;
 			font-size: 2em;
 			letter-spacing: 0.25em;
-			font-family: 'Playlist Script', cursive;
+			font-family: 'Playlist Script';
 		}
 
 		#logo p {
@@ -2531,7 +2531,7 @@ input, select, textarea {
 
 				#logo h1 {
 					font-size: 1.75em;
-					font-family: 'Playlist Script' cursive;
+					font-family: 'Playlist Script';
 				}
 
 			
