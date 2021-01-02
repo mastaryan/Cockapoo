@@ -115,10 +115,10 @@ input, select, textarea {
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-			color: rgb(80, 80, 173);					
+			color:#484d55;					
 			text-transform: capitalize;
-			font-family: 'Fredericka the Great', cursive;
-			font-size: 3.5rem;
+			font-family: 'Playlist Script', cursive;
+			font-size: 4.5rem;
 
 		}
 
@@ -2132,7 +2132,7 @@ input, select, textarea {
 		justify-content: center;
 		position: relative;
 		height: 24em;
-		background: url("../../images/white-brick-wall-textures-background_74190-6515.jpg") center center;
+		background: url("../../images/Bluegrass\ Doodle\ Website\ Flower.png") center center;
 		background-size: cover;
 		padding: 0;
 	}
@@ -2209,7 +2209,7 @@ input, select, textarea {
 				#nav > ul > li > a, #nav > ul > li > span {
 					display: block;
 					color: #eee;
-					color: rgb(80, 80, 173);					
+					color: #484d55;					
 					text-transform: uppercase;
 					text-decoration: none;
 					font-weight: bold;
