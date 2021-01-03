@@ -117,7 +117,7 @@ input, select, textarea {
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			color:#484d55;					
 			text-transform: capitalize;
-			font-family: 'Playlist Script', cursive;
+			font-family: 'Playlist Script' !important;
 			font-size: 4.5rem;
 
 		}
