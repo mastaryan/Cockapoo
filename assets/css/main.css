@@ -180,6 +180,11 @@ input, select, textarea {
 		margin-bottom: 2em;
 	}
 
+	@font-face {
+		font-family: Playlist Script;
+		src: url(PlaylistScript.otf);
+		}
+
 /* Container */
 
 	.container {
