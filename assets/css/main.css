@@ -2357,6 +2357,10 @@ input, select, textarea {
 	display: inline-block;
 }
 
+.doodlelist li {
+	list-style-type: none;
+}
+
 /* Main */
 
 /* Footer */
