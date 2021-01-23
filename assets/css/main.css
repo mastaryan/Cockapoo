@@ -1234,7 +1234,7 @@ input, select, textarea {
 		@media screen and (max-width: 500px) {
 
 			.feature-list.small {
-				display:none;
+				/* display:none; */
 			}
 			
 			.div .logo {
