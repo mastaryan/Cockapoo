@@ -3098,7 +3098,28 @@ input, select, textarea {
 							margin-top: 0;
 						}
 
-	/* Dog Breed Info CSS */
+					
+					
+						.hide {
+							display: none;
+						  }
+						  .myDIV{
+							text-align: center;
+						  } 
+						  
+						  .myDIV:hover .hide {
+							display: block;
+							color: red;
+						  }
+
+
+
+
+
+
+
+
+/* Dog Breed Info CSS */
 	/*! CSS Used from: https://dogtime.com/wp-content/plugins/bwp-minify/min/?f=wp-content/themes/dogtime-2019/css/main.css&ver=af0f3bc0cd60873331f1ec0f5a1899011b710713 ; media=screen */
 @media screen{
 	body *{
