@@ -12,7 +12,7 @@
 	})(window,document,'script','dataLayer','GTM-WLXM5N4');</script>
 	<!-- End Google Tag Manager -->
 		
-		<title>Check-out | Miniature Cockapoo & Labradoodle Puppies in London, KY</title>
+		<title>Check-out | Miniature Cockapoo Puppies in London, KY</title>
   <meta name="keywords" content="Miniature Poodle Puppies for sale, Bluegrass, Cockapoo puppies Kentucky">
   <meta name="description" content="We are local breeder in London, Kentucky that brings you beautiful Cockapoo, GoldenDoodle & Labradoodle Puppies.">
 
@@ -44,8 +44,8 @@
 			<li>
 				<a href="#">Available Pups</a>
 				<ul>
-					<li><a href="petitegolden.html">Petite Goldendoodles</a></li>
-					<li><a href="minilabradoole.html">Mini Labradoodle</a></li>
+					<li><a href="f1golden.html">Goldendoodles</a></li>
+					<li><a href="cockapoo.html">Cockapoos</a></li>
 				</ul>
 			</li>
 			
@@ -83,21 +83,61 @@
 			<div class="title">Payment Center</div>
 				<div id="payment">
 					<div class="container">
-						Click the Buy Now button to place your deposit of $200 on the light blue ribbon mini-cockapoo. This is a non-refundable deposit to hold your puppy. 
+						Click the Buy Now button to place your deposit of $200 on the Cockapoo puppies. This is a non-refundable deposit to hold your puppy. 
 						<br>
 						<br>
-						Total cost is $2,000. Balance will be due at or before pick-up. 
+						Total cost is $1,800. Balance will be due at or before pick-up. 
 						<br>
 						<br>
 
 									<!-- Paypal Code Start -->
 
-									<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-										<input type="hidden" name="cmd" value="_s-xclick">
-										<input type="hidden" name="hosted_button_id" value="XH93XTARJ4Q9C">
-										<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-										<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-										</form>
+									<div id="smart-button-container">
+										<div style="text-align: center;">
+										  <div id="paypal-button-container"></div>
+										</div>
+									  </div>
+									<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+									<script>
+									  function initPayPalButton() {
+										paypal.Buttons({
+										  style: {
+											shape: 'rect',
+											color: 'blue',
+											layout: 'horizontal',
+											label: 'pay',
+											
+										  },
+								  
+										  createOrder: function(data, actions) {
+											return actions.order.create({
+											  purchase_units: [{"description":"Cockapoo Deposit","amount":{"currency_code":"USD","value":206}}]
+											});
+										  },
+								  
+										  onApprove: function(data, actions) {
+											return actions.order.capture().then(function(orderData) {
+											  
+											  // Full available details
+											  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+								  
+											  // Show a success message within this page, e.g.
+											  const element = document.getElementById('paypal-button-container');
+											  element.innerHTML = '';
+											  element.innerHTML = '<h3>Thank you for your payment!</h3>';
+								  
+											  // Or go to another URL:  actions.redirect('thank_you.html');
+											  
+											});
+										  },
+								  
+										  onError: function(err) {
+											console.log(err);
+										  }
+										}).render('#paypal-button-container');
+									  }
+									  initPayPalButton();
+									</script>
 										
 									<!-- Paypal Code End -->
 
