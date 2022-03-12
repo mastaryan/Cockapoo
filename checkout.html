@@ -28,6 +28,24 @@
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Google Tag Manager (noscript) -->
 
+	 <!-- Meta Pixel Code -->
+<script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window, document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '1164497684057463');
+	fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+	src="https://www.facebook.com/tr?id=1164497684057463&ev=PageView&noscript=1"
+	/></noscript>
+	<!-- End Meta Pixel Code -->
+
 <!-- Header -->
 <section id="header" class="wrapper">
 
@@ -51,13 +69,13 @@
 					</li>
 					<li><a href="cockapoo.html">Cockapoos</a></li>
 				   
-					<li class="current"><a href="minilabradoodle.html">Labradoodles</a>
-						<!-- <ul>
-							<li><a href="labradoodle.html">Labradoodle</a></li>
-							<li><a href="minilabradoodle.html">Mini Labradoodle</a></li>
-						</ul> -->
-					</li>
-		</ul>
+							<!-- <li class="current"><a href="minilabradoodle.html">Labradoodles</a>
+								<ul>
+									<li><a href="labradoodle.html">Labradoodle</a></li>
+									<li><a href="minilabradoodle.html">Mini Labradoodle</a></li>
+								</ul>
+							</li> -->
+						</ul>
 		</li>
 	
 		<li>
@@ -92,66 +110,13 @@
 			<div class="title">Payment Center</div>
 				<div id="payment">
 					<div class="container">
-						Click the stripe photo below to place your deposit of $200 on the Cockapoo puppies. This is a non-refundable deposit to hold your puppy. 
+						Deposit payment can be made by Stripe (click the logo) or Venmo (scan the code).  
 						<br>
 						<br>
-						Balance of $1,300 will be due at or before pick-up. 
 						<br>
-						<br>
-						<a href="https://buy.stripe.com/3cs4ja14bec8aYM000" class="image featured"><img src="images/stripe.png" alt="" /></a>
-
-									<!-- Paypal Code Start -->
-
-									<!-- <div id="smart-button-container">
-										<div style="text-align: center;">
-										  <div id="paypal-button-container"></div>
-										</div>
-									  </div>
-									<script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-									<script>
-									  function initPayPalButton() {
-										paypal.Buttons({
-										  style: {
-											shape: 'pill',
-											color: 'blue',
-											layout: 'vertical',
-											label: 'buynow',
-											
-										  },
-								  
-										  createOrder: function(data, actions) {
-											return actions.order.create({
-											  purchase_units: [{"description":"Bluegrass Doodles Deposit","amount":{"currency_code":"USD","value":200}}]
-											});
-										  },
-								  
-										  onApprove: function(data, actions) {
-											return actions.order.capture().then(function(orderData) {
-											  
-											  // Full available details
-											  console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-								  
-											  // Show a success message within this page, e.g.
-											  const element = document.getElementById('paypal-button-container');
-											  element.innerHTML = '';
-											  element.innerHTML = '<h3>Thank you for your payment!</h3>';
-								  
-											  // Or go to another URL:  actions.redirect('thank_you.html');
-											  
-											});
-										  },
-								  
-										  onError: function(err) {
-											console.log(err);
-										  }
-										}).render('#paypal-button-container');
-									  }
-									  initPayPalButton();
-									</script> -->
-										
-									<!-- Paypal Code End -->
-
-
+						<a href="https://buy.stripe.com/eVaaHy4gn7NK0k8dQR" class="image featured"><img src="images/stripe.png" alt="" /></a>
+						<a href="#" class="image featured"><img src="images/venmo.png" alt="" width=100%/></a>
+								
 <!-- Puppy Depsoit Form Cont -->
 	</div>
 		</div>
