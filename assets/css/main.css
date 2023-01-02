@@ -115,7 +115,8 @@ input, select, textarea {
 			text-transform: capitalize;
 			font-family: 'BrittanySignature';
 			font-size: 4.5rem;
-			letter-spacing: 0.2em;
+			letter-spacing: 0;
+			letter
 
 		}
 
