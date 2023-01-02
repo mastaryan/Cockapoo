@@ -2074,7 +2074,9 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background:white url("images/overlay.png");
+			background:white url("images/websitebackground.png");
+			background-size: 100% auto;
+			background-repeat: no-repeat;
 			color: #eee;
 			color: rgba(255, 255, 255, 0.75);
 			
@@ -3111,11 +3113,6 @@ input, select, textarea {
 							display: block;
 							color: red;
 						  }
-
-
-
-
-
 
 
 
