@@ -2074,14 +2074,31 @@ input, select, textarea {
 				background: url("images/shadow.png");
 			}
 
-		.wrapper.style1 {
-			background:white url("images/websitebackground.png");
-			background-size: 100% auto;
-			background-repeat: no-repeat;
-			color: #eee;
-			color: rgba(255, 255, 255, 0.75);
-			
-		}
+.wrapper.style1 {
+    position: relative;
+    background: white url("images/websitebackground.jpg") no-repeat;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    color: rgba(255, 255, 255, 0.75);
+}
+/* 50% transparency overlay */
+.wrapper.style1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7); /* 70% fade */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure content appears above overlay */
+.wrapper.style1 > * {
+    position: relative;
+    z-index: 1;
+}
 
 			.wrapper.style1 .title {
 				background: grey url("images/overlay.png");
@@ -3200,3 +3217,11 @@ input, select, textarea {
 	@font-face{font-family:'Baloo';font-style:normal;font-weight:400;src:local('Baloo Regular'), local('Baloo-Regular'), url(https://fonts.gstatic.com/s/baloo/v5/6xKhdSpJJ92I9MWPCm4.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
 	@font-face {font-family: 'Playlist Script'; src: url(./webfonts/PlaylistScript.otf);}
 	@font-face {font-family: 'BrittanySignature'; src: url('BrittanySignatureRegular.woff2') format('woff2');}
+
+	.page-title {
+    text-align: center;
+    color: #5a5858;
+    padding-top: 1em;
+    font-size: 2rem;
+    font-weight: 700;
+}
