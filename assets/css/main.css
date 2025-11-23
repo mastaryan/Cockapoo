@@ -3220,34 +3220,16 @@ input, select, textarea {
 
 	.page-title {
     text-align: center;
-    color: #5a5858;
-    padding-top: 1em;
-    font-size: 2rem;
+    color: #484d55;
+    padding-top: 0;
+    font-size: 1rem;
     font-weight: 700;
 }
 
 .title h1.page-title {
-    margin: 0;
-    padding: 0.75em 0;       /* match original .title padding */
-    font-size: 1.25em;       /* same size as theme */
+    text-align: center;
+    color: #484d55;
+    padding-top: 0;
+    font-size: 1rem;
     font-weight: 700;
-    letter-spacing: 0.10em;
-    text-transform: uppercase;
-    color: #fff;             /* same color the box uses */
-    display: block;
-}
-/* Fix hero title box + H1 alignment on home page */
-.wrapper.style1 .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.wrapper.style1 .title h1.page-title {
-    margin: 0;
-    padding: 0;
-    line-height: 1.2;
-    font-size: 1em; /* tweak up/down if needed */
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
 }
