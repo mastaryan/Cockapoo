@@ -3,34 +3,41 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://bluegrassdoodle.com/#organization",
-      "name": "Bluegrass Doodles",
-      "url": "https://bluegrassdoodle.com/",
-      "logo": "https://bluegrassdoodle.com/images/cockapooheader.jpg",
-      "email": "puppies@bluegrassdoodle.com",
-      "telephone": "(606) 231-6147",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "P.O. Box 3393",
-        "addressLocality": "London",
-        "addressRegion": "KY",
-        "postalCode": "40744",
-        "addressCountry": "US"
-      },
-      "sameAs": [
-        "https://www.facebook.com/BGDoodles",
-        "https://www.instagram.com/bluegrassdoodles"
-      ]
-    },
-    {
       "@type": "WebSite",
       "@id": "https://bluegrassdoodle.com/#website",
       "url": "https://bluegrassdoodle.com/",
       "name": "Bluegrass Doodles",
+      "description": "Family breeder in London, Kentucky raising tri-color mini Cockapoo and mini Bernedoodle puppies (30–40 lbs).",
       "publisher": {
         "@id": "https://bluegrassdoodle.com/#organization"
-      }
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bluegrassdoodle.com/#organization",
+      "name": "Bluegrass Doodles",
+      "url": "https://bluegrassdoodle.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bluegrassdoodle.com/#logo",
+        "url": "https://bluegrassdoodle.com/images/logo.png",
+        "contentUrl": "https://bluegrassdoodle.com/images/logo.png"
+      },
+      "telephone": "(606) 231-6147",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "(606) 231-6147",
+          "areaServed": "US",
+          "availableLanguage": ["en"]
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/BGDoodles",
+        "https://www.instagram.com/bluegrassdoodles"
+      ]
     }
   ]
 }
