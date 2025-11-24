@@ -2074,14 +2074,15 @@ input, select, textarea {
 				background: url("images/shadow.png");
 			}
 
+/* Hero wrapper (homepage intro) */
 .wrapper.style1 {
     position: relative;
-    background: white url("images/websitebackground.jpg") no-repeat;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    color: rgba(255, 255, 255, 0.75);
+    background: url("images/websitebackground.jpg") center center no-repeat;
+    background-size: cover;           /* full-bleed photo like original */
+    color: #919499;                   /* match site body text color */
 }
-/* 50% transparency overlay */
+
+/* Light overlay so text stays readable */
 .wrapper.style1::before {
     content: "";
     position: absolute;
@@ -2089,16 +2090,17 @@ input, select, textarea {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7); /* 70% fade */
+    background: rgba(255, 255, 255, 0.65);
     pointer-events: none;
     z-index: 0;
 }
 
-/* Ensure content appears above overlay */
+/* Ensure all section content is above the overlay */
 .wrapper.style1 > * {
     position: relative;
     z-index: 1;
 }
+
 
 			.wrapper.style1 .title {
 				background: grey url("images/overlay.png");
