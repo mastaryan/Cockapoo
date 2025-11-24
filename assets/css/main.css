@@ -3221,12 +3221,13 @@ input, select, textarea {
 	@font-face {font-family: 'BrittanySignature'; src: url('BrittanySignatureRegular.woff2') format('woff2');}
 
 	.page-title {
+    color: #484d55 !important;   /* matches nav font color */
     text-align: center;
-    color: #484d55;
-    padding-top: 0;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 700;
+    letter-spacing: 0.15em;
 }
+
 
 .title h1.page-title {
     text-align: center;
