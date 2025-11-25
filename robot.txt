@@ -1,6 +1,5 @@
 # ==========================================
 # Bluegrass Doodles - robots.txt
-# Allow search engines, block common scrapers
 # ==========================================
 
 # --- Allow major search engines ---
@@ -91,5 +90,6 @@ Disallow: /
 User-agent: *
 Disallow:
 
-# --- Sitemap (add when you have one) ---
-# Sitemap: https://bluegrassdoodle.com/sitemap.xml
+
+# --- Sitemap ---
+Sitemap: https://bluegrassdoodle.com/sitemap.xml
