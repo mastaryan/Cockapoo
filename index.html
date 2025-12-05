@@ -42,32 +42,20 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!-- Homepage H1 / .page-title reset -->
+  <!-- Homepage hero H1 styling (independent of template .page-title) -->
   <style>
-    /* Kill theme's absolute/centered hero title styling */
-    h1.page-title,
-    .page-title {
-      position: static !important;
-      top: auto !important;
-      left: auto !important;
-      transform: none !important;
-      display: block !important;
-      margin: 0 0 1.5rem !important;
-      padding: 0;
-      background: transparent !important;
-      box-shadow: none !important;
+    .home-hero-title {
+      margin: 0 0 1.5rem;
       font-size: 2.5rem;
       font-weight: 700;
       text-align: center;
       text-transform: none;
       letter-spacing: 0.05em;
       line-height: 1.2;
-      z-index: 1 !important;
     }
 
     @media screen and (max-width: 736px) {
-      h1.page-title,
-      .page-title {
+      .home-hero-title {
         font-size: 2rem;
       }
     }
@@ -280,7 +268,7 @@
       <div class="container">
         <div class="row aln-center">
           <header class="style1">
-            <h1 class="page-title">Check out our Doodles</h1>
+            <h1 class="home-hero-title">Check out our Doodles</h1>
 
             <p class="style1">
               Located in the beautiful bluegrass state of Kentucky, our family has years of experience
