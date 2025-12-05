@@ -32,24 +32,17 @@
   <meta name="google-site-verification" content="YC_GwpQ4WkkPVW0msr2-Mlixp-3NLuUkI08jDiBllYI" />
   <meta name="facebook-domain-verification" content="6x7dye7dex810gqors39yyopkx3sya" />
 
-  <!-- Styles -->
-  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
-    rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <link href="custom.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <!-- Site styles (match all other pages) -->
   <link rel="stylesheet" href="assets/css/main.css" />
 
-   <!-- Homepage hero H1 styling & kill old hero overlay -->
+  <!-- Homepage hero H1 styling -->
   <style>
-    /* Hide any leftover template title element inside the intro hero */
+    /* Hide any leftover template title strip in the intro hero */
     #intro .title {
       display: none !important;
     }
 
-    /* Main homepage H1 */
+    /* Clean homepage H1 */
     .home-hero-title {
       margin: 0 0 1.5rem;
       font-size: 2.5rem;
@@ -60,25 +53,12 @@
       line-height: 1.2;
     }
 
-    /* Make absolutely sure nothing is positioned/overlaid in the hero */
-    #intro h1,
-    #intro .home-hero-title,
-    #intro .page-title {
-      position: static !important;
-      top: auto !important;
-      left: auto !important;
-      transform: none !important;
-      text-shadow: none !important;
-    }
-
-    /* Mobile font size tweak */
     @media screen and (max-width: 736px) {
       .home-hero-title {
         font-size: 2rem;
       }
     }
   </style>
-
 
   <!-- Structured Data: Organization -->
   <script type="application/ld+json">
@@ -105,7 +85,7 @@
 	}
 	</script>
 
-  <!-- Global SEO include -->
+  <!-- Global SEO include (GTM, AdSense, reCAPTCHA, etc.) -->
   <!--#include virtual="/includes/seo-global.html" -->
 
   <!-- Structured Data: WebPage + Breadcrumb -->
@@ -162,50 +142,17 @@
     "addressCountry": "US"
   },
   "areaServed": [
-    {
-      "@type": "State",
-      "name": "Kentucky"
-    },
-    {
-      "@type": "State",
-      "name": "Tennessee"
-    },
-    {
-      "@type": "State",
-      "name": "Ohio"
-    },
-    {
-      "@type": "State",
-      "name": "West Virginia"
-    },
-    {
-      "@type": "State",
-      "name": "Virginia"
-    },
-    {
-      "@type": "State",
-      "name": "North Carolina"
-    },
-    {
-      "@type": "State",
-      "name": "South Carolina"
-    },
-    {
-      "@type": "State",
-      "name": "Georgia"
-    },
-    {
-      "@type": "State",
-      "name": "Florida"
-    },
-    {
-      "@type": "State",
-      "name": "Texas"
-    },
-    {
-      "@type": "Country",
-      "name": "United States"
-    }
+    { "@type": "State", "name": "Kentucky" },
+    { "@type": "State", "name": "Tennessee" },
+    { "@type": "State", "name": "Ohio" },
+    { "@type": "State", "name": "West Virginia" },
+    { "@type": "State", "name": "Virginia" },
+    { "@type": "State", "name": "North Carolina" },
+    { "@type": "State", "name": "South Carolina" },
+    { "@type": "State", "name": "Georgia" },
+    { "@type": "State", "name": "Florida" },
+    { "@type": "State", "name": "Texas" },
+    { "@type": "Country", "name": "United States" }
   ],
   "contactPoint": [
     {
@@ -243,7 +190,7 @@
       "name": "Where are you located?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We are located in London, Kentucky and regularly serve families across Kentucky and surrounding states. We've had families from adopt our pets from all over the Central and Eastern US."
+        "text": "We are located in London, Kentucky and regularly serve families across Kentucky and surrounding states. We've had families adopt our pets from all over the Central and Eastern US."
       }
     },
     {
@@ -318,11 +265,12 @@
       </div>
     </section>
 
+    <!-- Footer (shared include) -->
     <!--#include virtual="/includes/footer.html" -->
 
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts (match other pages) -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.dropotron.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
@@ -330,24 +278,6 @@
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"
-    integrity="sha256-DHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
-  <script src="contact.js"></script>
-  <script>
-    $(document).ready(function () {
-      $('.dropdown-submenu a.test').on("click", function (e) {
-        $(this).next('ul').toggle();
-        e.stopPropagation();
-        e.preventDefault();
-      });
-    });
-  </script>
 </body>
 
 </html>
