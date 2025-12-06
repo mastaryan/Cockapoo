@@ -3236,3 +3236,7 @@ input, select, textarea {
     font-size: 1rem;
     font-weight: 700;
 }
+
+.d-none {
+    display: none !important;
+}
