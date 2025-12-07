@@ -25,12 +25,14 @@
 
 							<div class="col-12-small">
 								<div class="g-recaptcha" data-sitekey="6LeTAdoZAAAAABIoqzMv6g7oQ8M7UmBJhDCyDRAT"
-									data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback">
+									data-callback="verifyRecaptchaCallback"
+									data-expired-callback="expiredRecaptchaCallback">
 								</div>
-							
-								<input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha" readonly>
-							
-							
+
+								<input type="text" class="form-control recaptcha-token" data-recaptcha="true" required
+									data-error="Please complete the Captcha" readonly aria-hidden="true">
+
+
 								<br>
 								<ul class="actions">
 									<li><input type="submit" class="style1" value="Send" /></li>
