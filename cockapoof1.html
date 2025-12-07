@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
 
   <meta name="google-site-verification" content="YC_GwpQ4WkkPVW0msr2-Mlixp-3NLuUkI08jDiBllYI" />
@@ -107,10 +108,55 @@
 </head>
 
 <body class="homepage is-preload">
-	<!--#include virtual="/includes/gtm-noscript.html" -->
+  <!--#include virtual="/includes/gtm-noscript.html" -->
 
-	<div id="page-wrapper">
-		<!--#include virtual="/includes/header.html" -->
+  <div id="page-wrapper">
+
+    <!-- Success Banner -->
+    <style>
+      #reservation-banner {
+        display: none;
+        background: #4CAF50;
+        color: white;
+        padding: 15px 20px;
+        text-align: center;
+        font-size: 1.2em;
+        font-weight: 600;
+        position: relative;
+        opacity: 0;
+        transform: translateY(-25px);
+        transition: all 0.6s ease;
+        z-index: 9999;
+      }
+
+      #reservation-banner.show {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      #reservation-banner.hide {
+        opacity: 0;
+        transform: translateY(-25px);
+      }
+
+      #banner-close {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        cursor: pointer;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+    </style>
+
+    <div id="reservation-banner">
+      <span id="reservation-message"></span>
+      <span id="banner-close">×</span>
+    </div>
+
+
+    <!--#include virtual="/includes/header.html" -->
 
     <!-- Main -->
     <div id="main" class="wrapper style2">
@@ -124,90 +170,66 @@
 
           <p class="style1" style="text-align:center; max-width:900px; margin:0 auto 1.5em;">
             This page features one of our current <strong>mini F1 Cockapoo litter</strong>, raised right here in
-            <strong>London, KY</strong>. Our Cockapoo puppies are family-raised, low-shedding, wavy coats and known for their friendly,
+            <strong>London, KY</strong>. Our Cockapoo puppies are family-raised, low-shedding, wavy coats and known for
+            their friendly,
             people-loving personalities. To see more examples, visit our
             <a href="cockapoolitters.html">Cockapoo litters page</a> or read about how to reserve a puppy on our
             <a href="buyingprocess.html">buying process page</a>.
           </p>
 
           <p class="style1" style="text-align:center; max-width:900px; margin:0 auto 2em;">
-            These puppies were born on November 30, 2025. They will be de-wormed on schedule starting at three weeks, receive their first vet check and shots around
-            six weeks of age, and are typically ready to go home at about <strong>eight weeks old</strong>. We will schedule pick-ups for these
-            puppies starting <strong>Friday, January 23, 2026</strong> through <strong>Sunday, January 25, 2026</strong>. We will start accepting deposits for this litter soon.
+            These puppies were born on November 30, 2025. They will be de-wormed on schedule starting at three weeks,
+            receive their first vet check and shots around
+            six weeks of age, and are typically ready to go home at about <strong>eight weeks old</strong>. We will
+            schedule pick-ups for these
+            puppies starting <strong>Friday, January 23, 2026</strong> through <strong>Sunday, January 25,
+              2026</strong>. We will start accepting deposits for this litter soon.
             Deposit is <strong>$50 and non-refundable.</strong>
           </p>
 
           <div class="row aln-center">
+            <!-- Pink Female -->
             <div class="col-4 col-12-medium">
               <section class="highlight">
                 <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Pink Female.png" alt="Pink collar female Cockapoo from Bluegrass Doodles" />
+                  <img src="images/females/Shiloh/Winter 2025/Pink Female.png"
+                    alt="Pink collar female Cockapoo from Bluegrass Doodles" />
                 </a>
                 <ul class="actions">
-                  <li><a href="/checkout.html" class="button style1">Reserve Now</a></li>
+                  <li>
+                    <a href="https://buy.stripe.com/3cI4gA5ra2CWdmncCUeUU0B" class="button style1 reserve-btn"
+                      data-puppy-id="pink-female">
+                      Reserve Now
+                    </a>
+                  </li>
                 </ul>
               </section>
             </div>
 
+            <!-- Yellow Female -->
             <div class="col-4 col-12-medium">
               <section class="highlight">
                 <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Yellow Female.png" alt="Yellow collar female Cockapoo from Bluegrass Doodles" />
+                  <img src="images/females/Shiloh/Winter 2025/Yellow Female.png"
+                    alt="Yellow collar female Cockapoo from Bluegrass Doodles" />
                 </a>
                 <ul class="actions">
-                  <li><a href="/checkout.html" class="button style1">Reserve Now</a></li>
+                  <li>
+                    <a href="https://buy.stripe.com/4gMbJ2g5O91k2HJauMeUU0F" class="button style1 reserve-btn"
+                      data-puppy-id="yellow-female">
+                      Reserve Now
+                    </a>
+                  </li>
                 </ul>
               </section>
             </div>
 
+            <!-- Purple Female (Reserved) -->
             <div class="col-4 col-12-medium">
               <section class="highlight">
                 <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Purple Female.png" alt="Purple collar female Cockapoo from Bluegrass Doodles" />
-                </a>
-                <ul class="actions">
-                  <li><a href="#" class="button style1">Reserved</a></li>
-                </ul>
-              </section>
-            </div>
-
-            <div class="col-4 col-12-medium">
-              <section class="highlight">
-                <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Blue Male.png" alt="Blue collar male Cockapoo from Bluegrass Doodles" />
-                </a>
-                <ul class="actions">
-                  <li><a href="/checkout.html" class="button style1">Reserve Now</a></li>
-                </ul>
-              </section>
-            </div>
-
-            <div class="col-4 col-12-medium">
-              <section class="highlight">
-                <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Green Male.png" alt="Green collar male Cockapoo from Bluegrass Doodles" />
-                </a>
-                <ul class="actions">
-                  <li><a href="/checkout.html" class="button style1">Reserve Now</a></li>
-                </ul>
-              </section>
-            </div>
-
-            <div class="col-4 col-12-medium">
-              <section class="highlight">
-                <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Orange Male.png" alt="Orange collar male Cockapoo from Bluegrass Doodles" />
-                </a>
-                <ul class="actions">
-                  <li><a href="/checkout.html" class="button style1">Reserve Now</a></li>
-                </ul>
-              </section>
-            </div>
-
-            <div class="col-4 col-12-medium">
-              <section class="highlight">
-                <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Red Male.png" alt="Red collar male Cockapoo from Bluegrass Doodles" />
+                  <img src="images/females/Shiloh/Winter 2025/Purple Female.png"
+                    alt="Purple collar female Cockapoo from Bluegrass Doodles" />
                 </a>
                 <ul class="actions">
                   <li><a href="#" class="button style1">Reserved</a></li>
@@ -215,7 +237,74 @@
               </section>
             </div>
 
+            <!-- Blue Male -->
+            <div class="col-4 col-12-medium">
+              <section class="highlight">
+                <a href="#" class="image featured">
+                  <img src="images/females/Shiloh/Winter 2025/Blue Male.png"
+                    alt="Blue collar male Cockapoo from Bluegrass Doodles" />
+                </a>
+                <ul class="actions">
+                  <li>
+                    <a href="https://buy.stripe.com/00w28s06Q1ySdmngTaeUU0E" class="button style1 reserve-btn"
+                      data-puppy-id="blue-male">
+                      Reserve Now
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- Green Male -->
+            <div class="col-4 col-12-medium">
+              <section class="highlight">
+                <a href="#" class="image featured">
+                  <img src="images/females/Shiloh/Winter 2025/Green Male.png"
+                    alt="Green collar male Cockapoo from Bluegrass Doodles" />
+                </a>
+                <ul class="actions">
+                  <li>
+                    <a href="https://buy.stripe.com/fZu28scTC1yS5TV46oeUU0D" class="button style1 reserve-btn"
+                      data-puppy-id="green-male">
+                      Reserve Now
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- Orange Male -->
+            <div class="col-4 col-12-medium">
+              <section class="highlight">
+                <a href="#" class="image featured">
+                  <img src="images/females/Shiloh/Winter 2025/Orange Male.png"
+                    alt="Orange collar male Cockapoo from Bluegrass Doodles" />
+                </a>
+                <ul class="actions">
+                  <li>
+                    <a href="https://buy.stripe.com/7sYdRag5OgtMfuv9qIeUU0C" class="button style1 reserve-btn"
+                      data-puppy-id="orange-male">
+                      Reserve Now
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- Red Male (Reserved / not available) -->
+            <div class="col-4 col-12-medium">
+              <section class="highlight">
+                <a href="#" class="image featured">
+                  <img src="images/females/Shiloh/Winter 2025/Red Male.png"
+                    alt="Red collar male Cockapoo from Bluegrass Doodles" />
+                </a>
+                <ul class="actions">
+                  <li><a href="#" class="button style1">Reserved</a></li>
+                </ul>
+              </section>
+            </div>
           </div>
+
 
         </div>
       </section>
@@ -234,6 +323,53 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const puppyId = params.get('reserved');
+      if (!puppyId) return;
+
+      const prettyNames = {
+        "pink-female": "Pink Female",
+        "yellow-female": "Yellow Female",
+        "purple-female": "Purple Female",
+        "blue-male": "Blue Male",
+        "green-male": "Green Male",
+        "orange-male": "Orange Male",
+        "red-male": "Red Male"
+      };
+
+      const prettyName = prettyNames[puppyId] || "your puppy";
+
+      const banner = document.getElementById("reservation-banner");
+      const message = document.getElementById("reservation-message");
+      const closeBtn = document.getElementById("banner-close");
+
+      message.textContent = `Thank you! Your reservation for ${prettyName} has been received.`;
+
+      // Show animation
+      banner.style.display = "block";
+      setTimeout(() => {
+        banner.classList.add("show");
+      }, 50);
+
+      // Close button
+      closeBtn.onclick = () => {
+        banner.classList.add("hide");
+        setTimeout(() => (banner.style.display = "none"), 600);
+      };
+
+      // Auto hide after 10 seconds
+      setTimeout(() => {
+        banner.classList.add("hide");
+        setTimeout(() => (banner.style.display = "none"), 600);
+      }, 10000);
+    })();
+  </script>
+
+
+  <script src="assets/js/puppy-status.js"></script>
 
 </body>
+
 </html>

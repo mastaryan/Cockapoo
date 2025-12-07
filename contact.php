@@ -3,73 +3,193 @@
  *  CONFIGURE EVERYTHING HERE
  */
 
-// an email address that will be in the From field of the email.
+// email address that will be in the From field of the email
 $from = 'info@bluegrassdoodle.com';
 
-// an email address that will receive the email with the output of the form
+// email address that will receive the email with the output of the form
 $sendTo = 'info@bluegrassdoodle.com';
 
 // subject of the email
 $subject = 'New message from Bluegrass Doodles contact form';
 
-// form field names and their translations.
-// array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
+// form field names and their labels for the email
+$fields = array(
+    'name'    => 'Name',
+    'surname' => 'Surname',
+    'phone'   => 'Phone',
+    'email'   => 'Email',
+    'message' => 'Message'
+    // NOTE: honeypot field "website" is intentionally NOT listed here
+);
 
-// message that will be displayed when everything is OK :)
-$okMessage = 'Contact form successfully submitted. Thank you, we will get back to you soon!';
+// user-facing messages
+$okMessage    = 'Contact form successfully submitted. Thank you, we will get back to you soon!';
+$errorMessage = 'There was an error while submitting the form. Please try again later.';
 
-// If something goes wrong, we will display this message.
-$errorMessage = 'There was an error while submitting the form. Please try again later';
+// reCAPTCHA SECRET KEY (from Google dashboard)
+$recaptchaSecret = '6LeTAdoZAAAAAG2Zi4gK8hvA8afhdfPNJ_iqtVN1';
+
+// rate limiting settings
+$rateLimitMaxAttempts = 5;       // max submissions
+$rateLimitWindow       = 600;    // window in seconds (600 = 10 minutes)
 
 /*
  *  LET'S DO THE SENDING
  */
 
-// if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
 
-try
+/**
+ * Simple sanitizer
+ */
+function clean_field($value)
 {
+    return trim(strip_tags($value));
+}
 
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
-            
-    $emailText = "You have a new message from your contact form\n=============================\n";
+try {
 
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email 
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
+    // Reject non-POST requests
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        throw new Exception('Invalid request method');
+    }
+
+    if (count($_POST) === 0) {
+        throw new Exception('Form is empty');
+    }
+
+    // -----------------------------
+    // 1) HONEYPOT CHECK
+    // -----------------------------
+    // "website" is a hidden/off-screen field in the form.
+    // Humans leave it empty; bots often fill it.
+    $honeypot = isset($_POST['website']) ? trim($_POST['website']) : '';
+    if ($honeypot !== '') {
+        // Treat as spam and silently fail.
+        throw new Exception('Spam detected via honeypot');
+    }
+
+    // -----------------------------
+    // 2) RATE LIMITING PER IP
+    // -----------------------------
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    $ipSafe = preg_replace('/[^0-9a-zA-Z_.-]/', '_', $ip);
+
+    $rateDir = __DIR__ . '/rate_limit';
+    if (!is_dir($rateDir)) {
+        @mkdir($rateDir, 0755, true);
+    }
+
+    $rateFile = $rateDir . '/' . $ipSafe . '.json';
+    $now      = time();
+
+    $attempts = [];
+    if (file_exists($rateFile)) {
+        $json = file_get_contents($rateFile);
+        $attempts = json_decode($json, true);
+        if (!is_array($attempts)) {
+            $attempts = [];
         }
     }
 
-    // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
+    // keep only attempts inside the time window
+    $attempts = array_filter($attempts, function ($ts) use ($now, $rateLimitWindow) {
+        return ($now - (int)$ts) < $rateLimitWindow;
+    });
+
+    if (count($attempts) >= $rateLimitMaxAttempts) {
+        throw new Exception('Rate limit exceeded for this IP');
+    }
+
+    // record current attempt
+    $attempts[] = $now;
+    @file_put_contents($rateFile, json_encode(array_values($attempts)));
+
+    // -----------------------------
+    // 3) reCAPTCHA VALIDATION
+    // -----------------------------
+    if (empty($_POST['g-recaptcha-response'])) {
+        throw new Exception('reCAPTCHA is missing');
+    }
+
+    $recaptchaToken = $_POST['g-recaptcha-response'];
+
+    $verifyUrl = 'https://www.google.com/recaptcha/api/siteverify';
+
+    $query = http_build_query([
+        'secret'   => $recaptchaSecret,
+        'response' => $recaptchaToken,
+        'remoteip' => $ip,
+    ]);
+
+    $verifyResponse = @file_get_contents($verifyUrl . '?' . $query);
+
+    if ($verifyResponse === false) {
+        throw new Exception('Unable to contact reCAPTCHA verification server');
+    }
+
+    $captchaData = json_decode($verifyResponse, true);
+
+    if (empty($captchaData['success'])) {
+        throw new Exception('reCAPTCHA verification failed');
+    }
+
+    // -----------------------------
+    // 4) VALIDATE EMAIL + BUILD BODY
+    // -----------------------------
+
+    // Validate email format
+    if (isset($_POST['email'])) {
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            throw new Exception('Invalid email address');
+        }
+        $_POST['email'] = $email;
+    }
+
+    // Build email body
+    $emailText = "You have a new message from the Bluegrass Doodles contact form\n";
+    $emailText .= "=====================================================\n";
+
+    foreach ($fields as $key => $label) {
+        if (isset($_POST[$key]) && $_POST[$key] !== '') {
+            $value = clean_field($_POST[$key]);
+            $emailText .= "$label: $value\n";
+        }
+    }
+
+    // Headers
+    $headers = array(
+        "Content-Type: text/plain; charset=UTF-8",
+        "From: $from",
+        "Reply-To: $from",
+        "Return-Path: $from"
     );
-    
+
     // Send email
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
+    $mailResult = @mail($sendTo, $subject, $emailText, implode("\n", $headers));
+
+    if (!$mailResult) {
+        throw new Exception('Mail sending failed');
+    }
 
     $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
+
+} catch (Exception $e) {
+
+    // Optional: log errors
+    // error_log("Contact form error: " . $e->getMessage());
+
     $responseArray = array('type' => 'danger', 'message' => $errorMessage);
 }
 
-
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
+// Return JSON if AJAX, otherwise fallback to plain text
+if (
+    !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+    strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest'
+) {
     header('Content-Type: application/json');
-
-    echo $encoded;
-}
-// else just display the message
-else {
+    echo json_encode($responseArray);
+} else {
     echo $responseArray['message'];
 }

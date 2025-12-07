@@ -24,14 +24,23 @@
 							</div>
 
 							<div class="col-12-small">
-								<div class="g-recaptcha" data-sitekey="6LeTAdoZAAAAABIoqzMv6g7oQ8M7UmBJhDCyDRAT"
+								<!-- Honeypot field (for bots only – hidden from humans) -->
+								<div
+									style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+									<label for="website">Website</label>
+									<input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+								</div>
+
+								<!-- Google reCAPTCHA Widget -->
+								<div class="g-recaptcha"
+									data-sitekey="6LeTAdoZAAAAABAloqzMv6g7oQ8M7UmBJhDCyDRAT"
 									data-callback="verifyRecaptchaCallback"
 									data-expired-callback="expiredRecaptchaCallback">
 								</div>
 
-								<input type="text" class="form-control recaptcha-token" data-recaptcha="true" required
-									data-error="Please complete the Captcha" readonly aria-hidden="true">
-
+								<!-- Hidden token field used by contact.js -->
+								<input type="hidden" data-recaptcha="true" required
+									data-error="Please complete the Captcha">
 
 								<br>
 								<ul class="actions">

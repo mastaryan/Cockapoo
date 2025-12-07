@@ -1,0 +1,30 @@
+[
+  {
+    "id": "pink-female",
+    "status": "available"
+  },
+  {
+    "id": "yellow-female",
+    "status": "available"
+  },
+  {
+    "id": "purple-female",
+    "status": "reserved"
+  },
+  {
+    "id": "blue-male",
+    "status": "available"
+  },
+  {
+    "id": "green-male",
+    "status": "available"
+  },
+  {
+    "id": "orange-male",
+    "status": "available"
+  },
+  {
+    "id": "red-male",
+    "status": "reserved"
+  }
+]
