@@ -340,7 +340,6 @@
       };
 
       const prettyName = prettyNames[puppyId] || "your puppy";
-
       const banner = document.getElementById("reservation-banner");
       const message = document.getElementById("reservation-message");
       const closeBtn = document.getElementById("banner-close");
@@ -364,10 +363,36 @@
         banner.classList.add("hide");
         setTimeout(() => (banner.style.display = "none"), 600);
       }, 10000);
+
+      // ---- NEW: Facebook browser Purchase event ----
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          value: 50.00,
+          currency: 'USD',
+          content_ids: [puppyId],
+          content_type: 'product',
+          contents: [
+            {
+              id: puppyId,
+              quantity: 1,
+              item_price: 50.00
+            }
+          ],
+          content_name: 'Cockapoo Puppy Deposit'
+        });
+      }
     })();
+
+      // ---- NEW: GA4 reservation_complete event ----
+  if (typeof gtag === 'function') {
+    gtag('event', 'reservation_complete', {
+      puppy_id: puppyId,
+      value: 50.00,
+      currency: 'USD'
+    });
+  }
+
   </script>
-
-
   <script src="assets/js/puppy-status.js"></script>
 
 </body>
