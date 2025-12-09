@@ -2,117 +2,89 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <title>Puppy Reservation Confirmed | Bluegrass Doodles</title>
-  <meta name="description"
-        content="Thank you for reserving your Bluegrass Doodles puppy. Your deposit has been received and we’ll follow up with next steps." />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <link rel="canonical" href="https://bluegrassdoodle.com/thankyou.html">
-  <link rel="stylesheet" href="assets/css/main.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Reservation Deposit Received | Bluegrass Doodles</title>
+    <meta name="description" content="Thank you for reserving your puppy with Bluegrass Doodles. Your deposit has been received and your puppy is now officially reserved." />
+    <link rel="canonical" href="https://bluegrassdoodle.com/thankyou.html" />
 
-  <!-- Global SEO / GA / Meta tags include -->
-  <!--#include virtual="/includes/seo-global.html" -->
+    <!-- Include global SEO tags, styles, fonts, etc. -->
+    <!--#include virtual="/includes/seo-global.html" -->
 
-  <!-- Optional simple WebPage schema for this page -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://bluegrassdoodle.com/thankyou.html",
-    "url": "https://bluegrassdoodle.com/thankyou.html",
-    "name": "Puppy Reservation Confirmed | Bluegrass Doodles",
-    "description": "Thank you page shown after a puppy reservation is completed for Bluegrass Doodles in Kentucky.",
-    "isPartOf": {
-      "@id": "https://bluegrassdoodle.com/#website"
-    }
-  }
-  </script>
 </head>
 
-<body class="homepage is-preload">
-  <!-- GTM noscript include -->
-  <!--#include virtual="/includes/gtm-noscript.html" -->
+<body class="is-preload">
 
-  <div id="page-wrapper">
-    <!-- Site header / nav -->
+    <!-- Header -->
     <!--#include virtual="/includes/header.html" -->
 
-    <!-- Main content -->
-    <section id="main" class="wrapper style2">
-      <div class="title">
-        <h1 class="page-title">Thank You for Your Reservation</h1>
-      </div>
+    <div id="main" class="wrapper" style="padding-top: 40px;">
 
-      <div class="container">
-        <div id="content">
-          <article class="box post">
-            <header class="style1">
-              <h2 id="puppy-heading">Your puppy is now reserved!</h2>
-            </header>
+        <section class="container" style="max-width: 900px; margin: auto; text-align: center;">
 
-            <p id="puppy-message">
-              We’ve received your reservation deposit and your puppy is now officially <strong>marked reserved</strong>.
+            <!-- Main Heading -->
+            <h2 style="letter-spacing: 2px; font-size: 24px; margin-bottom: 10px; font-weight: 600;">
+                DEPOSIT RECEIVED
+            </h2>
+
+            <!-- Dynamic Puppy Name -->
+            <h1 style="
+                font-family: 'Princess Sofia', cursive;
+                font-size: 48px;
+                margin: 0 0 20px 0;
+                line-height: 1.2;
+            ">
+                <span id="puppyName"></span> is now reserved!
+            </h1>
+
+            <!-- Body Text -->
+            <p style="font-size: 18px; margin-top: 20px;">
+                We’ve received your reservation deposit and 
+                <strong><span id="puppyName2"></span></strong> is now officially 
+                <strong>marked reserved.</strong>
             </p>
 
-            <p>
-              We’ll reach out soon with next steps, including pickup details, timing, and final payment information.
-              In the meantime, feel free to follow us on
-              <a href="https://www.facebook.com/groups/bluegrassdoodles" rel="noopener" target="_blank">Facebook</a>
-              or <a href="https://www.instagram.com/bluegrassdoodles" rel="noopener" target="_blank">Instagram</a>
-              for more puppy updates.
+            <p style="font-size: 17px; margin-top: 20px;">
+                We’ll reach out soon with next steps, including pickup details, timing, and any updates.
+                You can follow us on 
+                <a href="https://www.facebook.com/bluegrassdoodles" target="_blank">Facebook</a> 
+                or 
+                <a href="https://www.instagram.com/bluegrassdoodles" target="_blank">Instagram</a>
+                for more puppy news.
             </p>
 
-            <p>
-              If you have any questions, you can reply to your confirmation email or
-              <a href="buyingprocess.html">review our buying process</a> for more details.
+            <p style="font-size: 17px; margin-top: 20px;">
+                If you have any questions, feel free to reply to your confirmation email or 
+                <a href="/contact.html">contact us here</a>.
             </p>
 
-            <p>
-              <a href="comingsoon.html" class="button style1">View Upcoming Litters</a>
-              &nbsp;
-              <a href="index.html" class="button">Back to Home</a>
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+            <!-- View Upcoming Litters Button -->
+            <div style="margin-top: 35px;">
+                <a href="/comingsoon.html" class="button primary" style="padding: 12px 32px;">
+                    View Upcoming Litters
+                </a>
+            </div>
+
+        </section>
+
+    </div>
 
     <!-- Footer -->
     <!--#include virtual="/includes/footer.html" -->
-  </div>
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.dropotron.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
+    <!-- Puppy Name Query Script -->
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const puppy = params.get("puppy") || "Your Puppy";
 
-  <!-- Tiny script to show puppy name from ?puppy= query parameter -->
-  <script>
-    (function () {
-      const params = new URLSearchParams(window.location.search);
-      const puppy = params.get('puppy');
+        // Insert name in both locations
+        document.getElementById("puppyName").textContent = puppy;
+        document.getElementById("puppyName2").textContent = puppy;
+    </script>
 
-      if (puppy) {
-        const decoded = decodeURIComponent(puppy.replace(/\+/g, ' '));
+    <!-- GTM Noscript fallback -->
+    <!--#include virtual="/includes/gtm-noscript.html" -->
 
-        const heading = document.getElementById('puppy-heading');
-        const message = document.getElementById('puppy-message');
-
-        if (heading) {
-          heading.textContent = decoded + ' is now reserved!';
-        }
-        if (message) {
-          message.innerHTML =
-            'We’ve received your reservation deposit and <strong>' +
-            decoded +
-            '</strong> is now officially <strong>marked reserved</strong>.';
-        }
-      }
-    })();
-  </script>
 </body>
 
 </html>
