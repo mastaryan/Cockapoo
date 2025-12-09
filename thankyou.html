@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Puppy Reservation Confirmed | Bluegrass Doodles</title>
+  <meta name="description"
+        content="Thank you for reserving your Bluegrass Doodles puppy. Your deposit has been received and we’ll follow up with next steps." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="canonical" href="https://bluegrassdoodle.com/thankyou.html">
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <!-- Global SEO / GA / Meta tags include -->
+  <!--#include virtual="/includes/seo-global.html" -->
+
+  <!-- Optional simple WebPage schema for this page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://bluegrassdoodle.com/thankyou.html",
+    "url": "https://bluegrassdoodle.com/thankyou.html",
+    "name": "Puppy Reservation Confirmed | Bluegrass Doodles",
+    "description": "Thank you page shown after a puppy reservation is completed for Bluegrass Doodles in Kentucky.",
+    "isPartOf": {
+      "@id": "https://bluegrassdoodle.com/#website"
+    }
+  }
+  </script>
+</head>
+
+<body class="homepage is-preload">
+  <!-- GTM noscript include -->
+  <!--#include virtual="/includes/gtm-noscript.html" -->
+
+  <div id="page-wrapper">
+    <!-- Site header / nav -->
+    <!--#include virtual="/includes/header.html" -->
+
+    <!-- Main content -->
+    <section id="main" class="wrapper style2">
+      <div class="title">
+        <h1 class="page-title">Thank You for Your Reservation</h1>
+      </div>
+
+      <div class="container">
+        <div id="content">
+          <article class="box post">
+            <header class="style1">
+              <h2 id="puppy-heading">Your puppy is now reserved!</h2>
+            </header>
+
+            <p id="puppy-message">
+              We’ve received your reservation deposit and your puppy is now officially <strong>marked reserved</strong>.
+            </p>
+
+            <p>
+              We’ll reach out soon with next steps, including pickup details, timing, and final payment information.
+              In the meantime, feel free to follow us on
+              <a href="https://www.facebook.com/groups/bluegrassdoodles" rel="noopener" target="_blank">Facebook</a>
+              or <a href="https://www.instagram.com/bluegrassdoodles" rel="noopener" target="_blank">Instagram</a>
+              for more puppy updates.
+            </p>
+
+            <p>
+              If you have any questions, you can reply to your confirmation email or
+              <a href="buyingprocess.html">review our buying process</a> for more details.
+            </p>
+
+            <p>
+              <a href="comingsoon.html" class="button style1">View Upcoming Litters</a>
+              &nbsp;
+              <a href="index.html" class="button">Back to Home</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <!--#include virtual="/includes/footer.html" -->
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.dropotron.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Tiny script to show puppy name from ?puppy= query parameter -->
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const puppy = params.get('puppy');
+
+      if (puppy) {
+        const decoded = decodeURIComponent(puppy.replace(/\+/g, ' '));
+
+        const heading = document.getElementById('puppy-heading');
+        const message = document.getElementById('puppy-message');
+
+        if (heading) {
+          heading.textContent = decoded + ' is now reserved!';
+        }
+        if (message) {
+          message.innerHTML =
+            'We’ve received your reservation deposit and <strong>' +
+            decoded +
+            '</strong> is now officially <strong>marked reserved</strong>.';
+        }
+      }
+    })();
+  </script>
+</body>
+
+</html>
