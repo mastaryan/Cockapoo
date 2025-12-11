@@ -1,86 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- MAIN PAGES -->
   <url>
     <loc>https://bluegrassdoodle.com/</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://bluegrassdoodle.com/buyingprocess.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://bluegrassdoodle.com/cockapoolitters.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.9</priority>
+    <loc>https://bluegrassdoodle.com/about.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://bluegrassdoodle.com/cockapoof1.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://bluegrassdoodle.com/cockapoof1bb.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.5</priority>
+    <loc>https://bluegrassdoodle.com/cockapoolitters.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://bluegrassdoodle.com/bernedoodle.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bluegrassdoodle.com/bernedoodlelitters.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://bluegrassdoodle.com/goldendoodlelitters.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
+    <loc>https://bluegrassdoodle.com/bernedoodlelitters.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://bluegrassdoodle.com/goldendoodlelitters.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://bluegrassdoodle.com/comingsoon.html</loc>
-    <lastmod>2025-11-24</lastmod>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://bluegrassdoodle.com/about.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://bluegrassdoodle.com/stud.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.7</priority>
+    <loc>https://bluegrassdoodle.com/buyingprocess.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://bluegrassdoodle.com/amazon.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://bluegrassdoodle.com/chewy.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.6</priority>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
 
   <url>
-    <loc>https://bluegrassdoodle.com/checkout.html</loc>
-    <lastmod>2025-11-24</lastmod>
-    <priority>0.4</priority>
+    <loc>https://bluegrassdoodle.com/privacy.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
+
+  <url>
+    <loc>https://bluegrassdoodle.com/thankyou.html</loc>
+    <lastmod>2025-12-11</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+
 </urlset>
