@@ -2,6 +2,7 @@
 // File where we track puppy status
 $dataFile = __DIR__ . '/data/puppies.json';
 
+<<<<<<< HEAD
 // Load secrets (server-only)
 require_once __DIR__ . '/includes/secrets.php';
 
@@ -12,6 +13,15 @@ $secretToken = BG_RESERVE_TOKEN;
 $fbPixelId     = FB_PIXEL_ID;
 $fbAccessToken = FB_CAPI_ACCESS_TOKEN;
 $depositValue  = 50.00; // deposit amount in USD
+=======
+// Shared secret so randoms can't hit this and mark pups reserved
+$secretToken = 'REDACTED';
+
+// ---------- Facebook CAPI settings ----------
+$fbPixelId    = 'REDACTED';
+$fbAccessToken = 'REDACTED'; // <-- replace with your token
+$depositValue = 50.00; // deposit amount in USD
+>>>>>>> fb02d27de4247801dbdf6ac4675ef587ed30f0b4
 
 /**
  * Send Purchase event to Facebook Conversions API

@@ -9,7 +9,7 @@ if (!empty($_POST['website'])) {
 }
 
 // Google reCAPTCHA SECRET KEY
-$recaptchaSecret = '6LfBKyosAAAAACLqt0IpLhKQm2jQ8Xo4tDMNa3j9';
+$recaptchaSecret = 'REDACTED';
 
 $recaptchaResponse = $_POST['g-recaptcha-response'] ?? '';
 
