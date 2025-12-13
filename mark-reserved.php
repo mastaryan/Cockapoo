@@ -2,13 +2,16 @@
 // File where we track puppy status
 $dataFile = __DIR__ . '/data/puppies.json';
 
-// Shared secret so randoms can't hit this and mark pups reserved
-$secretToken = 'BGDoodlesReserve_2025_3f97c1b2c4';
+// Load secrets (server-only)
+require_once __DIR__ . '/includes/secrets.php';
 
-// ---------- Facebook CAPI settings ----------
-$fbPixelId    = '433201072263739';
-$fbAccessToken = 'EAATTYkjN900BQCsXHKxYL6D9jeLNWekQLeXoVGCmYZB3w0ENVXbtEs2te04llADvdjavObim8NVqQvXe4JOiHgL7i5dYG0emysJbZCmVRaeq3uzjqiELsfGD0PZCfW9SudmH1NyKYw7opK643yWZCSdyU5leZC5EDjSDCMDYhZBxLQ9kr1Um63y6AoeM8ePwZDZD'; // <-- replace with your token
-$depositValue = 50.00; // deposit amount in USD
+// Shared secret so randoms can't hit this and mark pups reserved
+$secretToken = BG_RESERVE_TOKEN;
+
+// ---------- Facebook CAPI settings ---------- 
+$fbPixelId     = FB_PIXEL_ID;
+$fbAccessToken = FB_CAPI_ACCESS_TOKEN;
+$depositValue  = 50.00; // deposit amount in USD
 
 /**
  * Send Purchase event to Facebook Conversions API
