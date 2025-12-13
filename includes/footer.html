@@ -8,53 +8,49 @@
 				<section>
 					<form id="contact-form" method="post" action="contact.php" role="form">
 						<div class="row gtr-50">
+
 							<div class="col-6 col-12-small">
 								<label for="name">Name:</label>
-								<input type="text" id="name" name="name" required="required">
+								<input type="text" id="name" name="name" required>
 							</div>
 
 							<div class="col-6 col-12-small">
 								<label for="email">Email:</label>
-								<input type="email" id="email" name="email" required="required">
+								<input type="email" id="email" name="email" required>
 							</div>
 
 							<div class="col-12">
 								<label for="message">Message:</label>
-								<textarea rows="5" id="message" name="message" required="required" cols="30"></textarea>
+								<textarea rows="5" id="message" name="message" required></textarea>
 							</div>
 
 							<div class="col-12-small">
-								<!-- Honeypot field (for bots only – hidden from humans) -->
-								<div
-									style="position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;">
+
+								<!-- Honeypot field (bots only) -->
+								<div style="position:absolute; left:-9999px;">
 									<label for="website">Website</label>
-									<input type="text" id="website" name="website" autocomplete="off" tabindex="-1">
+									<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
 								</div>
 
-								<!-- Google reCAPTCHA Widget -->
+								<!-- Google reCAPTCHA -->
 								<div class="g-recaptcha"
-									data-sitekey="6LeTAdoZAAAAABAloqzMv6g7oQ8M7UmBJhDCyDRAT"
-									data-callback="verifyRecaptchaCallback"
-									data-expired-callback="expiredRecaptchaCallback">
+									data-sitekey="6LfBKyosAAAAACUMfBNn3i-x9_bbsWnwXb-DDvL_">
 								</div>
-
-								<!-- Hidden token field used by contact.js -->
-								<input type="hidden" data-recaptcha="true" required
-									data-error="Please complete the Captcha">
 
 								<br>
-								<ul class="actions">
-									<li><input type="submit" class="style1" value="Send" /></li>
-									<li><input type="reset" class="style2" value="Clear" /></li>
-								</ul>
-							</div>
 
+								<ul class="actions">
+									<li><input type="submit" class="style1" value="Send"></li>
+									<li><input type="reset" class="style2" value="Clear"></li>
+								</ul>
+
+							</div>
 						</div>
 					</form>
 				</section>
 			</div>
 
-			<!-- Contact Details + Internal SEO Links -->
+			<!-- Contact Details -->
 			<div class="col-6 col-12-medium">
 				<section class="feature-list small">
 					<div class="row">
@@ -62,9 +58,7 @@
 						<div class="col-6 col-12-small">
 							<section>
 								<h3 class="icon solid fa-envelope">Email</h3>
-								<p>
-									<a href="mailto:info@bluegrassdoodle.com">info@bluegrassdoodle.com</a>
-								</p>
+								<p><a href="mailto:info@bluegrassdoodle.com">info@bluegrassdoodle.com</a></p>
 							</section>
 						</div>
 
@@ -72,9 +66,11 @@
 							<section>
 								<h3 class="icon solid fa-comment">Social</h3>
 								<p>
-									<a href="https://www.instagram.com/bluegrassdoodles">Instagram</a><br />
-									<a href="https://www.facebook.com/BGDoodles">Facebook</a><br />
-									<a href="https://g.page/r/CaAUCqukqmZdEBM/review" target="_blank" rel="noopener">Google Reviews</a>
+									<a href="https://www.instagram.com/bluegrassdoodles">Instagram</a><br>
+									<a href="https://www.facebook.com/BGDoodles">Facebook</a><br>
+									<a href="https://g.page/r/CaAUCqukqmZdEBM/review" target="_blank" rel="noopener">
+										Google Reviews
+									</a>
 								</p>
 							</section>
 						</div>
@@ -82,35 +78,29 @@
 						<div class="col-6 col-12-small">
 							<section>
 								<h3 class="icon brands fa-amazon">Shopping List</h3>
-								<p>Our favorite items on Amazon</p>
+								<p>Our favorite items (coming soon)</p>
 							</section>
 						</div>
 
 						<div class="col-6 col-12-small">
 							<section>
 								<h3 class="icon solid fa-dog">Chewy</h3>
-								<p>
-									<a href="#">
-										Our favorite Chewy products
-									</a>
-								</p>
+								<p><a href="#">Our favorite Chewy products</a></p>
 							</section>
 						</div>
 
-						<!-- ⭐ Internal Link Block 1: Explore Our Doodles -->
 						<div class="col-6 col-12-small">
 							<section>
 								<h3 class="icon solid fa-paw">Explore Our Doodles</h3>
 								<ul>
 									<li><a href="cockapoof1.html">Mini Cockapoo puppies</a></li>
 									<li><a href="bernedoodle.html">Mini Bernedoodle puppies</a></li>
-									<li><a href="comingsoon.html">Upcoming Cockapoo & Bernedoodle litters</a></li>
-									<li><a href="buyingprocess.html">How our buying process works</a></li>
+									<li><a href="comingsoon.html">Upcoming litters</a></li>
+									<li><a href="buyingprocess.html">Buying process</a></li>
 								</ul>
 							</section>
 						</div>
 
-						<!-- ⭐ Internal Link Block 2: Past Litters -->
 						<div class="col-6 col-12-small">
 							<section>
 								<h3 class="icon solid fa-bone">See Past Litters</h3>
@@ -132,7 +122,7 @@
 			<ul>
 				<li>&copy; BluegrassDoodle 2025</li>
 				<li>Design: <a href="http://www.github.com/mastaryan">mastaryan creations</a></li>
-				<li><a href="https://bluegrassdoodle.com/privacy.html">Privacy Policy</a></li>
+				<li><a href="/privacy.html">Privacy Policy</a></li>
 			</ul>
 		</div>
 
