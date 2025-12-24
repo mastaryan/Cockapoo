@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 
 <head>
 
@@ -161,13 +161,13 @@
         "@type": "Product",
         "name": "Blue Male Cockapoo Puppy",
         "image": "https://bluegrassdoodle.com/images/females/Shiloh/Winter%202025/Blue%20Male.png",
-        "description": "Mini F1 Cockapoo puppy from Shiloh’s Winter 2025 litter in London, KY.",
+        "description": "Mini F1 Cockapoo puppy from Shiloh’s Winter 2025 litter. This puppy is reserved.",
         "sku": "blue-male",
         "offers": {
           "@type": "Offer",
           "price": "1000",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
+          "availability": "https://schema.org/SoldOut",
           "url": "https://bluegrassdoodle.com/cockapoof1.html"
         }
       },
@@ -175,13 +175,13 @@
         "@type": "Product",
         "name": "Green Male Cockapoo Puppy",
         "image": "https://bluegrassdoodle.com/images/females/Shiloh/Winter%202025/Green%20Male.png",
-        "description": "Mini F1 Cockapoo puppy from Shiloh’s Winter 2025 Cockapoo litter.",
+        "description": "Mini F1 Cockapoo puppy from Shiloh’s Winter 2025 litter. This puppy is reserved.",
         "sku": "green-male",
         "offers": {
           "@type": "Offer",
           "price": "1000",
           "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
+          "availability": "https://schema.org/SoldOut",
           "url": "https://bluegrassdoodle.com/cockapoof1.html"
         }
       },
@@ -260,6 +260,13 @@
         font-size: 1.3em;
         font-weight: bold;
       }
+
+      /* Disabled button style for reserved pups */
+      .button.is-disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
     </style>
 
     <div id="reservation-banner">
@@ -283,7 +290,7 @@
             Meet our current <strong>mini F1 Cockapoo litter</strong>, raised right here in
             <strong>London, Kentucky</strong>. Our Cockapoo puppies are <strong>family-raised</strong>, have
             wavy, low-shedding coats, and are known for their friendly, people-loving
-              personalities. To see more examples of past litters, visit our
+            personalities. To see more examples of past litters, visit our
             <a href="cockapoolitters.html">Cockapoo litters page</a>, and for details on how everything works, read our
             <a href="buyingprocess.html">buying process page</a>.
           </p>
@@ -340,30 +347,29 @@
                     alt="2 weeks old Purple collar mini F1 Cockapoo female puppy from Bluegrass Doodles in Kentucky, reserved" />
                 </a>
                 <ul class="actions">
-                  <li><a href="#" class="button style1">Reserved</a></li>
-                </ul>
-              </section>
-            </div>
-
-            <!-- Blue Male -->
-            <div class="col-4 col-12-medium">
-              <section class="highlight">
-                <a href="#" class="image featured">
-                  <img src="images/females/Shiloh/Winter 2025/Blue Male.jpg"
-                    alt="2 weeks old Blue collar mini F1 Cockapoo male puppy in Kentucky from Bluegrass Doodles" />
-                </a>
-                <ul class="actions">
                   <li>
-                    <a href="#" class="button style1 reserve-btn"
-                      data-puppy-id="blue-male">
-                      Reserved
-                    </a>
+                    <a href="#" class="button style1 is-disabled" aria-disabled="true" tabindex="-1">Reserved</a>
                   </li>
                 </ul>
               </section>
             </div>
 
-            <!-- Green Male -->
+            <!-- Blue Male (Reserved) -->
+            <div class="col-4 col-12-medium">
+              <section class="highlight">
+                <a href="#" class="image featured">
+                  <img src="images/females/Shiloh/Winter 2025/Blue Male.jpg"
+                    alt="2 weeks old Blue collar mini F1 Cockapoo male puppy in Kentucky from Bluegrass Doodles, reserved" />
+                </a>
+                <ul class="actions">
+                  <li>
+                    <a href="#" class="button style1 is-disabled" aria-disabled="true" tabindex="-1">Reserved</a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- Green Male (Reserved) -->
             <div class="col-4 col-12-medium">
               <section class="highlight">
                 <a href="#" class="image featured">
@@ -372,10 +378,7 @@
                 </a>
                 <ul class="actions">
                   <li>
-                    <a href="#" class="button style1 reserve-btn"
-                      data-puppy-id="green-male">
-                      Reserved
-                    </a>
+                    <a href="#" class="button style1 is-disabled" aria-disabled="true" tabindex="-1">Reserved</a>
                   </li>
                 </ul>
               </section>
@@ -399,7 +402,7 @@
               </section>
             </div>
 
-            <!-- Red Male (Reserved / not available) -->
+            <!-- Red Male (Reserved) -->
             <div class="col-4 col-12-medium">
               <section class="highlight">
                 <a href="#" class="image featured">
@@ -407,7 +410,9 @@
                     alt="2 weeks old Red collar mini F1 Cockapoo male puppy from Bluegrass Doodles in Kentucky, reserved" />
                 </a>
                 <ul class="actions">
-                  <li><a href="#" class="button style1">Reserved</a></li>
+                  <li>
+                    <a href="#" class="button style1 is-disabled" aria-disabled="true" tabindex="-1">Reserved</a>
+                  </li>
                 </ul>
               </section>
             </div>
@@ -499,6 +504,24 @@
         });
       }
     })();
+  </script>
+
+  <script>
+    // Force Stripe links to navigate even if another script prevents default clicks
+    document.addEventListener('click', function (e) {
+      const a = e.target.closest('a.reserve-btn');
+      if (!a) return;
+
+      const href = a.getAttribute('href') || '';
+      const isStripe = href.startsWith('https://buy.stripe.com/');
+
+      if (!isStripe) return;
+
+      // If any other script tries to block the click, we take over.
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.location.href = href;
+    }, true); // capture phase runs before most handlers
   </script>
 
   <script src="assets/js/puppy-status.js"></script>
