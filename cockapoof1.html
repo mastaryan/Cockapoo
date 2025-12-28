@@ -217,6 +217,60 @@
   }
   </script>
 
+  <!-- Lightbox (Enlarge Photos on Click) -->
+  <style>
+    /* ---- Lightbox Modal ---- */
+    .bd-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      background: rgba(0, 0, 0, 0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+
+    .bd-lightbox.show {
+      display: flex;
+    }
+
+    .bd-lightbox__img {
+      max-width: min(1100px, 96vw);
+      max-height: 88vh;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+    }
+
+    .bd-lightbox__close {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 26px;
+      line-height: 42px;
+      text-align: center;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(4px);
+    }
+
+    .bd-lightbox__close:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    /* Cursor hint on clickable images */
+    .bd-zoomable {
+      cursor: zoom-in;
+    }
+  </style>
+
 </head>
 
 <body class="homepage is-preload">
@@ -428,6 +482,12 @@
 
   </div> <!-- /#page-wrapper -->
 
+  <!-- Lightbox Modal (one per page) -->
+  <div id="bdLightbox" class="bd-lightbox" aria-hidden="true">
+    <button id="bdLightboxClose" class="bd-lightbox__close" aria-label="Close">×</button>
+    <img id="bdLightboxImg" class="bd-lightbox__img" src="" alt="">
+  </div>
+
   <!-- Scripts -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.dropotron.min.js"></script>
@@ -525,6 +585,59 @@
   </script>
 
   <script src="assets/js/puppy-status.js"></script>
+
+  <!-- Lightbox JS (enlarge images on click) -->
+  <script>
+    (function () {
+      const lightbox = document.getElementById('bdLightbox');
+      const lightboxImg = document.getElementById('bdLightboxImg');
+      const closeBtn = document.getElementById('bdLightboxClose');
+
+      if (!lightbox || !lightboxImg || !closeBtn) return;
+
+      // Target all puppy images inside the featured image links
+      const imgs = document.querySelectorAll('.image.featured img');
+
+      imgs.forEach(img => {
+        img.classList.add('bd-zoomable');
+        img.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const src = img.getAttribute('src');
+          const alt = img.getAttribute('alt') || 'Puppy photo';
+
+          lightboxImg.src = src;
+          lightboxImg.alt = alt;
+
+          lightbox.classList.add('show');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('show');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lightboxImg.src = '';
+        lightboxImg.alt = '';
+      }
+
+      closeBtn.addEventListener('click', closeLightbox);
+
+      // Click outside the image closes
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // ESC closes
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
 
 </body>
 
