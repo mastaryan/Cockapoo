@@ -2191,7 +2191,7 @@ input, select, textarea {
 		top: 3em;
 	}
 
-		#logo h1 {
+		#logo h1, #logo .site-name {
 			font-weight: 900;
 			text-transform: uppercase;
 			color: #fff;
@@ -2564,7 +2564,7 @@ input, select, textarea {
 				margin-top: -0.5em !important;
 			}
 
-				#logo h1 {
+				#logo h1, #logo .site-name {
 					font-size: 1.75em;
 					font-family: 'Playlist Script';
 				}
@@ -3019,7 +3019,7 @@ input, select, textarea {
 				padding-right: 2em;
 			}
 
-				#logo h1 {
+				#logo h1, #logo .site-name {
 					font-size: 1.5em;
 					letter-spacing: 0.2em;
 					line-height: 3em;
