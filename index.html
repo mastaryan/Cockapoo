@@ -36,7 +36,77 @@
 
   <link rel="stylesheet" href="assets/css/main.css" />
 
-  <!--#include virtual="/includes/seo-global.html" -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://bluegrassdoodle.com/#website",
+      "url": "https://bluegrassdoodle.com/",
+      "name": "Bluegrass Doodles",
+      "description": "Family breeder in London, Kentucky raising tri-color mini Cockapoo and mini Bernedoodle puppies (30–40 lbs).",
+      "publisher": {
+        "@id": "https://bluegrassdoodle.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://bluegrassdoodle.com/#organization",
+      "name": "Bluegrass Doodles",
+      "url": "https://bluegrassdoodle.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "@id": "https://bluegrassdoodle.com/#logo",
+        "url": "https://bluegrassdoodle.com/images/wplogo.png",
+        "contentUrl": "https://bluegrassdoodle.com/images/wplogo.png"
+      },
+      "telephone": "(606) 231-6147",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "(606) 231-6147",
+          "areaServed": "US",
+          "availableLanguage": ["en"]
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/BGDoodles",
+        "https://www.instagram.com/bluegrassdoodles"
+      ]
+    }
+  ]
+}
+</script>
+
+	<!-- Google Tag Manager -->
+	<script>
+		(function (w, d, s, l, i) {
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start': new Date().getTime(), event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-NDHBZGN');
+	</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Google AdSense Start -->
+	<script data-ad-client="ca-pub-9745680505770656" async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<!-- Google AdSense End -->
+
+	<!-- Google AdSense End -->
+
+	<!-- Google reCAPTCHA (used in footer contact form on all pages) -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <meta name="facebook-domain-verification" content="6x7dye7dex810gqors39yyopkx3sya" />
 
   <!-- Structured Data: Organization -->
@@ -219,10 +289,69 @@
 </head>
 
 <body class="homepage is-preload">
-  <!--#include virtual="/includes/gtm-noscript.html" -->
+  <!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDHBZGN"
+	        height="0" width="0"
+	        style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 
   <div id="page-wrapper">
-    <!--#include virtual="/includes/header.html" -->
+    <!-- Header -->
+<section id="header" class="wrapper">
+
+	<!-- Logo -->
+	<div id="logo">
+		<h1><a href="/">Bluegrass Doodles</a></h1>
+		<p>Cockapoo & Mini Bernedoodle Puppies in Kentucky</p>
+	</div>
+
+	<!-- Nav -->
+	<nav id="nav">
+		<ul>
+			<li class="current"><a href="/">Home</a></li>
+
+			<li>
+				<a href="#">Nursery</a>
+				<!-- <ul>
+					<li><a href="/cockapoof1.html">Cockapoo Nursery</a></li>
+					<li><a href="/bernedoodle.html">Bernedoodle Nursery</a></li>
+				</ul>
+			</li> -->
+
+			<li>
+				<a href="/comingsoon.html">Coming Soon</a>
+			</li>
+
+			<li>
+				<a href="#">Previous Litters</a>
+				<ul>
+					<li><a href="/cockapoolitters.html">Cockapoo Puppies</a></li>
+					<li><a href="/goldendoodlelitters.html">Goldendoodle Puppies</a></li>
+					<li><a href="/bernedoodlelitters.html">Bernedoodle Puppies</a></li>
+				</ul>
+			</li>
+
+			<li><a href="/buyingprocess.html">Buying Process</a></li>
+
+			<li>
+				<a href="#">Other</a>
+				<ul>
+					<li><a href="/about.html">About Us</a></li>
+					<li><a href="/amazon.html">Amazon Products</a></li>
+					<li><a href="/chewy.html">Chewy Products</a></li>
+					<!-- If/when you want stud services visible again, uncomment: -->
+					<!-- <li><a href="/stud.html">Stud Service</a></li> -->
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<!-- Nav End -->
+
+</section>
+
 
     <!-- Intro / Hero -->
     <section id="intro" class="wrapper style1">
@@ -260,7 +389,137 @@
     </section>
 
     <!-- Footer (shared include) -->
-    <!--#include virtual="/includes/footer.html" -->
+    <section id="footer" class="wrapper">
+	<div class="title">Contact Us</div>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-6 col-12-medium">
+				<!-- Contact Form -->
+				<section>
+					<form id="contact-form" method="post" action="contact.php" role="form">
+						<div class="row gtr-50">
+
+							<div class="col-6 col-12-small">
+								<label for="name">Name:</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+
+							<div class="col-6 col-12-small">
+								<label for="email">Email:</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+
+							<div class="col-12">
+								<label for="message">Message:</label>
+								<textarea rows="5" id="message" name="message" required></textarea>
+							</div>
+
+							<div class="col-12-small">
+
+								<!-- Honeypot field (bots only) -->
+								<div style="position:absolute; left:-9999px;">
+									<label for="website">Website</label>
+									<input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+								</div>
+
+								<!-- Google reCAPTCHA -->
+								<div class="g-recaptcha"
+									data-sitekey="6LfBKyosAAAAACUMfBNn3i-x9_bbsWnwXb-DDvL_">
+								</div>
+
+								<br>
+
+								<ul class="actions">
+									<li><input type="submit" class="style1" value="Send"></li>
+									<li><input type="reset" class="style2" value="Clear"></li>
+								</ul>
+
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+
+			<!-- Contact Details -->
+			<div class="col-6 col-12-medium">
+				<section class="feature-list small">
+					<div class="row">
+
+						<div class="col-6 col-12-small">
+							<section>
+								<h3 class="icon solid fa-envelope">Email</h3>
+								<p><a href="mailto:info@bluegrassdoodle.com">info@bluegrassdoodle.com</a></p>
+							</section>
+						</div>
+
+						<div class="col-6 col-12-small">
+							<section>
+								<h3 class="icon solid fa-comment">Social</h3>
+								<p>
+									<a href="https://www.instagram.com/bluegrassdoodles">Instagram</a><br>
+									<a href="https://www.facebook.com/BGDoodles">Facebook</a><br>
+									<a href="https://g.page/r/CaAUCqukqmZdEBM/review" target="_blank" rel="noopener">
+										Google Reviews
+									</a>
+								</p>
+							</section>
+						</div>
+
+						<div class="col-6 col-12-small">
+							<section>
+								<h3 class="icon brands fa-amazon">Shopping List</h3>
+								<p>Our favorite items (coming soon)</p>
+							</section>
+						</div>
+
+						<div class="col-6 col-12-small">
+							<section>
+								<h3 class="icon solid fa-dog">Chewy</h3>
+								<p><a href="#">Our favorite Chewy products</a></p>
+							</section>
+						</div>
+
+						<div class="col-6 col-12-small">
+							<section>
+								<h3 class="icon solid fa-paw">Explore Our Doodles</h3>
+								<ul>
+									<li><a href="cockapoof1.html">Mini Cockapoo puppies</a></li>
+									<li><a href="bernedoodle.html">Mini Bernedoodle puppies</a></li>
+									<li><a href="comingsoon.html">Upcoming litters</a></li>
+									<li><a href="buyingprocess.html">Buying process</a></li>
+								</ul>
+							</section>
+						</div>
+
+						<div class="col-6 col-12-small">
+							<section>
+								<h3 class="icon solid fa-bone">See Past Litters</h3>
+								<ul>
+									<li><a href="cockapoolitters.html">Past Cockapoo litters</a></li>
+									<li><a href="bernedoodlelitters.html">Past Bernedoodle litters</a></li>
+									<li><a href="goldendoodlelitters.html">Past Goldendoodle litters</a></li>
+								</ul>
+							</section>
+						</div>
+
+					</div>
+				</section>
+			</div>
+
+		</div>
+
+		<div id="copyright">
+			<ul>
+				<li>&copy; BluegrassDoodle 2025</li>
+				<li>Design: <a href="https://apex-king-digital.netlify.app/" target="_blank" rel="noopener">Apex King Digital</a></li>
+				<li><a href="/privacy.html">Privacy Policy</a></li>
+			</ul>
+		</div>
+
+	</div>
+</section>
+
 
   </div>
 
